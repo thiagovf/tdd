@@ -1,13 +1,13 @@
 # TDD - Test Driven Development  
 ## Introdução
-TDD é uma abordagem em que o teste é desenvolvido antes que a regra de negócio seja implementada. O código usado nesse repositório trata-se de um curso da Alura. Por mais que o TDD seja extremamente útil por impactar inclusive na forma de pensar do desenvolvedor, ressalto também a releavância de aplicar testes automatizados mesmo em códigos já existentes e que sabidamente funcionam conforme a requisito estabelecido.  
+TDD é uma abordagem em que o teste é desenvolvido antes que a regra de negócio seja implementada. O código usado nesse repositório trata-se de um curso. Por mais que o TDD seja extremamente útil por impactar inclusive na forma de pensar do desenvolvedor, ressalto também a releavância de aplicar testes automatizados mesmo em códigos já existentes e que sabidamente funcionam conforme a requisito estabelecido.  
 Em projetos reais é comum encontrarmos pilhas de classes sem cobertura alguma de testes automatizados mas que o sistema está em produção e é amplamente utilizado. Na rotina de prazos apertados no dia a dia do desenvolvimento somos levados a fazer ajustes ou correções de bugs pontuais sem se ater aos testes. Esse é o ponto crítico que considero.  
 Se partirmos do princípio que é responsabilidade do desenvolvedor refatorar o código sempre que encontrar duplicidade ou outros vícios do tipo, é grande o risco de que o desenvolvedor acabe inserindo erros em regras que já estavam funcionando ou que o desenvolvedor não tenha nem coragem de fazer a refatoração tornando o código cada vez mais difícil de dar manutenção.  
 Meu ponto principal para esses códigos já sem cobertura é: **implementar testes antes de refatorar o código**. Isso vai encorajar o desenvolvedor a fazer as refatorações necessárias e diminuirá significativamente a chance de quebrar as regras que já estavam funcionando.
 ## Implementações  
 Apesar do ponto trazido acima, tratando de códigos que já estariam em produção, o código desse repositório é simples e traz implementações que já nasceram com TDD.  
 ### Teste Classe de Serviço  
-No código tem a classe BonusService onde possui a regra de negócio que implementa o bônus, para isso, escrevemos a classe abaixo:
+No código do repositório, existe a classe BonusService que possui a regra de negócio que implementa o bônus, para isso, escrevemos a classe abaixo:
 ```java  
 class BonusServiceTest {
 
