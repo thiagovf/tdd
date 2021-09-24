@@ -1,4 +1,4 @@
-package br.com.tdd;
+package br.com.tdd.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 
 import br.com.tdd.modelo.Funcionario;
-import br.com.tdd.service.BonusService;
 
 class BonusServiceTest {
 
