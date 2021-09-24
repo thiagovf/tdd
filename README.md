@@ -74,3 +74,17 @@ class BonusServiceTest {
 }
 ```  
 Observe que os nomes dos métodos, apesar de extensos, estão sendo bem claros no que se propõem.
+### TDD  
+Os códigos que tinhamos feito até agora utilizavam testes automatizados mas estes foram feitos depois da implementação. No TDD a sequência é inversa, conforme pode ser visto na imagem abaixo.
+![Ciclo-TDD](http://newyorkschooltalk.org/wp-content/uploads/2020/02/1_ieVWcSsJmeBbZFo6a_dL5g.png)
+Portanto, conforme pode ser visto no commit (link commit) do código abaixo, ainda não compila. Fizemos dessa forma para que pensemos no resultado antes de pensar na forma como iremos realmente implementá-lo.
+```java  
+	@Test
+	public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
+		ReajusteService service = new ReajusteService();
+		Funcionario funcionario = new Funcionario("Ana", LocalDate.now(), new BigDecimal("1000.00"));
+		
+		service.concederReajuste(funcionario, Desempenho.A_DESEJAR);
+		assertEquals(new BigDecimal("1030.00"), funcionario.getSalario());
+	}
+```  
