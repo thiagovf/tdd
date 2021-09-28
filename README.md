@@ -95,5 +95,6 @@ public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
 		BigDecimal reajuste = funcionario.getSalario().multiply(new BigDecimal("0.03"));
 		funcionario.reajustarSalario(reajuste);
 	}
-} ```  
+}
+```  
 
