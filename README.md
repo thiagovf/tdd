@@ -75,12 +75,13 @@ class BonusServiceTest {
 ```  
 Observe que os nomes dos métodos, apesar de extensos, estão sendo bem claros no que se propõem.
 ### TDD  
-Os códigos que fizemos até agora utilizaram testes automatizados, mas estes foram feitos depois da implementação. No TDD a sequência é inversa. Iremos implementar três cenários:
+Os códigos que fizemos até agora utilizaram testes automatizados, mas estes foram feitos depois da implementação. No TDD a sequência é inversa.  
+![Ciclo-TDD](http://newyorkschooltalk.org/wp-content/uploads/2020/02/1_ieVWcSsJmeBbZFo6a_dL5g.png)  
+Iremos implementar três cenários:
 - Se o desempenho for a desejar, aumento de 3%;
 - Se o desempenho for bom, aumento de 15%;
 - Se o desempenho for ótimo, aumento de 20%.  
-O primeiro cenário começamos pelo teste abaixo: 
-![Ciclo-TDD](http://newyorkschooltalk.org/wp-content/uploads/2020/02/1_ieVWcSsJmeBbZFo6a_dL5g.png)  
+
 Portanto, conforme pode ser visto no [commit](https://github.com/thiagovf/tdd/commit/11bf2428562bc71736f18d79c43b8609cbfd7ba5) do código abaixo, ainda não compila. Fizemos dessa forma para que pensemos no resultado antes de pensar na forma como iremos realmente implementá-lo.
 ```java  
 @Test
