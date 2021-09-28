@@ -102,4 +102,56 @@ public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
 	}
 }
 ```  
+Seguindo na estratégia de implementar de forma simplificada, temos o código abaixo que trata os três cenários possíveis de reajuste.   
+```java  
+public class ReajusteService {
 
+	public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
+		BigDecimal percentual;
+		if (Desempenho.A_DESEJAR.equals(desempenho)) {
+			percentual = new BigDecimal("0.03");
+		} else if (Desempenho.BOM.equals(desempenho)) {
+			percentual = new BigDecimal("0.15");
+		} else if (Desempenho.OTIMO.equals(desempenho)) {
+			percentual = new BigDecimal("0.2");
+		} else {
+			percentual = new BigDecimal("0");
+		}
+		
+		BigDecimal reajuste = funcionario.getSalario().multiply(percentual);
+		funcionario.reajustarSalario(reajuste);
+		
+	}   
+```   
+Observe que a lógica dos ```if```  é a mesma, variando só o percentual de acordo com o desempenho passado. Esse cenário é ideal para a implementação do padrão *strategy*. Portanto, podemos agora **refatorar** o código sem medo de que o código vá parar de funcionar, dado que temos os testes cobrindo os cenários possíveis.  
+```java  
+public class ReajusteService {
+	public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
+		BigDecimal reajuste = funcionario.getSalario().multiply(desempenho.percentualReajuste());
+		funcionario.reajustarSalario(reajuste);
+	}
+}  
+```
+Ao invés de ser adicionado um ```if``` novo para cada cenário possível, passamos a utilizar no ```Enum``` o método que retorna o percentual referente ao desempenho.  
+```java  
+public enum Desempenho {
+	A_DESEJAR {
+		@Override
+		public BigDecimal percentualReajuste() {
+			return new BigDecimal("0.03");
+		}
+	}, BOM {
+		@Override
+		public BigDecimal percentualReajuste() {
+			return new BigDecimal("0.15");
+		}
+	}, OTIMO {
+		@Override
+		public BigDecimal percentualReajuste() {
+			return new BigDecimal("0.2");
+		}
+	};
+
+	public abstract BigDecimal percentualReajuste();
+}   
+```  
