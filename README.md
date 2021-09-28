@@ -88,3 +88,12 @@ public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
 	assertEquals(new BigDecimal("1030.00"), funcionario.getSalario());
 }
 ```  
+Feito esse código, o compilador vai reclamar dos métodos e classes não existentes. Dessa forma, é possível usar a própria IDE para gerar o "template" do que vai ser implementado, chegando ao ponto de termos que fazer apenas a lógica abaixo na classe ```ReajusteService```. 
+```java  
+public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
+	if (Desempenho.A_DESEJAR.equals(desempenho)) {
+		BigDecimal reajuste = funcionario.getSalario().multiply(new BigDecimal("0.03"));
+		funcionario.reajustarSalario(reajuste);
+	}
+} ```  
+
