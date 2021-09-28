@@ -79,12 +79,12 @@ Os códigos que tinhamos feito até agora utilizavam testes automatizados mas es
 ![Ciclo-TDD](http://newyorkschooltalk.org/wp-content/uploads/2020/02/1_ieVWcSsJmeBbZFo6a_dL5g.png)  
 Portanto, conforme pode ser visto no [commit](https://github.com/thiagovf/tdd/commit/11bf2428562bc71736f18d79c43b8609cbfd7ba5) do código abaixo, ainda não compila. Fizemos dessa forma para que pensemos no resultado antes de pensar na forma como iremos realmente implementá-lo.
 ```java  
-	@Test
-	public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
-		ReajusteService service = new ReajusteService();
-		Funcionario funcionario = new Funcionario("Ana", LocalDate.now(), new BigDecimal("1000.00"));
-		
-		service.concederReajuste(funcionario, Desempenho.A_DESEJAR);
-		assertEquals(new BigDecimal("1030.00"), funcionario.getSalario());
-	}
+@Test
+public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
+	ReajusteService service = new ReajusteService();
+	Funcionario funcionario = new Funcionario("Ana", LocalDate.now(), new BigDecimal("1000.00"));
+
+	service.concederReajuste(funcionario, Desempenho.A_DESEJAR);
+	assertEquals(new BigDecimal("1030.00"), funcionario.getSalario());
+}
 ```  
