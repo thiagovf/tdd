@@ -155,3 +155,14 @@ public enum Desempenho {
 	public abstract BigDecimal percentualReajuste();
 }   
 ```  
+### Vantagens do TDD   
+- Código já sai com cobertura de teste adequada:  
+	- Quando escrevemos o teste primeiro, não corre o risco de ter aquela preguiça após a implementação de uma funcionalidade complexa com vários cenários possíveis e que já perdemos muito tempo para fazê-la.  
+- Evita testes "viciados" na implementação:  
+	- Quando fazemos o teste após a implementação, podemos cair no erro de fazer um teste direcionado para o código que fizemos e não com base no comportamento que é esperado. Pode parecer uma diferença sutil inicialmente, mas fazendo o TDD você garante que o comportamento é que está sendo testado, independente da forma como a implamentação foi feita.  
+- Refatoração constante;  
+- Manter o foco:  
+	- Quando estamos no meio de uma implementação é comum começarmos a pensar em diferentes cenários que podem acontecer, preocupando-se com várias coisas ao mesmo tempo, podendo resultar mais facilmente em um bug. Com o TDD, nós nos preocupamos somente com aquele cenário específico que vai ser testado. Pros cenários posteriores, a preocupação é posterior.  
+### Quando usar o TDD  
+Naquelas funcionalidades novas que são mais complexas, que não sabemos ao certo como vai ser o algoritmo, se vai ter uma ou três classes, o TDD pode ajudar bastante por conta da ideia de rascunho que está atrelada aos testes.   
+Já em classes DAO ou Repository, por exemplo, talvez não faça tanto sentido fazer com TDD , dado que não muda muito, não tem tanta lógica ali. É razoável fazer o código primeiro e depois colocar os testes automatizados.   
