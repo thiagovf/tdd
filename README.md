@@ -167,4 +167,8 @@ public enum Desempenho {
 Naquelas funcionalidades novas que são mais complexas, que não sabemos ao certo como vai ser o algoritmo, se vai ter uma ou três classes, o TDD pode ajudar bastante por conta da ideia de rascunho que está atrelada aos testes.   
 Já em classes DAO ou Repository, por exemplo, talvez não faça tanto sentido fazer com TDD , dado que não muda muito, não tem tanta lógica ali. É razoável fazer o código primeiro e depois colocar os testes automatizados.   
 ## Exceptions
-Em alguns fluxos da aplicação, é normal que desejemos lançar exceptions para que seja evidenciado que trata-se de um comportamento não desejado. Nesses cenários, podemos definir testes automatizados que irão prever que sejam lançadas exceções.  
+Em alguns fluxos da aplicação, é normal que desejemos lançar exceptions para que seja evidenciado que trata-se de um comportamento não desejado. Nesses cenários, podemos definir testes automatizados que irão prever que sejam lançadas exceções através do ```assertThrows```.  
+```java  
+assertThrows(Exception.class, ()-> service.calcularBonus());  
+```  
+
