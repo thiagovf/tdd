@@ -171,4 +171,13 @@ Em alguns fluxos da aplicação, é normal que desejemos lançar exceptions para
 ```java  
 assertThrows(Exception.class, ()-> service.calcularBonus());  
 ```  
+Pode ser feito também através do bloco try catch. Dessa forma, é possível verificar se a mensagem retornada pela exception está de acordo com o esperado.  
+```java  
+try {  
+    service.calcularBonus();    
+    fail("Erro. Deveria ter dado exception");    
+} catch (Exception e) {   
+    assertEquals("Mensagem esperada", e.getMessage());
+}  
+```  
 
