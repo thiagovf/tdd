@@ -5,15 +5,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.tdd.modelo.Funcionario;
 
 class BonusServiceTest {
+	
+	private BonusService service;
+	
+	@BeforeEach
+	public void init() {
+		this.service = new BonusService();
+	}
 
 	@Test
 	void bonusDeveriaSerZeroParaSalarioMuitoAlto() {
-		BonusService service = new BonusService();
 		BigDecimal salario = new BigDecimal("28000");
 		BigDecimal bonusEsperado = new BigDecimal("0.00");
 		
@@ -25,7 +32,6 @@ class BonusServiceTest {
 	
 	@Test
 	void bonusDeveriaSerDezPorcentoDoSalario() {
-		BonusService service = new BonusService();
 		BigDecimal salario = new BigDecimal("9000");
 		BigDecimal bonusEsperado = new BigDecimal("900.00");
 		
@@ -37,7 +43,6 @@ class BonusServiceTest {
 	
 	@Test
 	void bonusDeveriaSerDezPorcentoDoSalarioExatamente10000() {
-		BonusService service = new BonusService();
 		BigDecimal salario = new BigDecimal("10000");
 		BigDecimal bonusEsperado = new BigDecimal("1000.00");
 		
@@ -49,7 +54,6 @@ class BonusServiceTest {
 	
 	@Test
 	void bonusDeveriaSerZeroParaSalarioNegativo() {
-		BonusService service = new BonusService();
 		BigDecimal salario = new BigDecimal("-1000");
 		BigDecimal bonusEsperado = new BigDecimal("0.00");
 		
@@ -61,7 +65,6 @@ class BonusServiceTest {
 	
 	@Test
 	void bonusDeveriaSerZeroParaSalarioZero() {
-		BonusService service = new BonusService();
 		BigDecimal salario = new BigDecimal("0");
 		BigDecimal bonusEsperado = new BigDecimal("0.00");
 		
