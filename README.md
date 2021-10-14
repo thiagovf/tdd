@@ -191,3 +191,5 @@ public void init() {
 }   
 ```  
 Assim como tem o BeforeEach e BeforeAll, existe também o AfterEach e AfterAll. Vale ressaltar que os métodos **BeforeAll** e **AfterAll** precisam ser estáticos.  
+## Teste de métodos privados  
+Não devemos fazer teste específico para métodos privados. Se ele é privado, é má prática torná-lo público somente para testá-lo. O teste ocorrerá através dos outros métodos que fazem uso dele.  
