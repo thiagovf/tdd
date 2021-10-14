@@ -180,7 +180,7 @@ try {
     assertEquals("Mensagem esperada", e.getMessage());
 }  
 ```  
-## @BeforeEach ou @BeforeAll  
+## BeforeEach ou BeforeAll  
 O JUnit possibilita que possamos executar um método antes que todos os métodos de teste sejam executados ```@BeforeAll``` ou antes que cada método seja executado ```@BeforeEach```. No nosso cenário, utilizamos o BeforeEach para inicialiar os objetos que estavam sendo repetidamente inicializados em cada método.  
 ```java  
 private BonusService service;
@@ -190,3 +190,4 @@ public void init() {
 	this.service = new BonusService();
 }   
 ```  
+Assim como tem o BeforeEach e BeforeAll, existe também o AfterEach e AfterAll. Vale ressaltar que os métodos **BeforeAll** e **AfterAll** precisam ser estáticos.  
